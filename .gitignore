@@ -1,0 +1,7 @@
+#ignore the venv
+
+flaskvenv/
+
+#also ignore the __pycache__ 
+
+__pycache__/
