@@ -1,6 +1,4 @@
-from flask import Flask
-
-app = Flask(__name__)
+from app import app
 
 @app.route('/')
 def hello_world():
@@ -12,6 +10,4 @@ def hello_worl():
 
     asdf = 213
     return asdf
-
-
 
