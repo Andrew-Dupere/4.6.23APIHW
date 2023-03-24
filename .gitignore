@@ -5,3 +5,10 @@ flaskvenv/
 #also ignore the __pycache__ 
 
 __pycache__/
+
+.env
+
+#hide .env cause that is were the secrets are kept
+
+app.db
+
