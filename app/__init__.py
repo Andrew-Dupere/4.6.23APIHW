@@ -4,6 +4,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 
+
+
+
 app = Flask(__name__)
 app.config.from_object(Config)
 #app is an instance of the flask app, app.config calls an attribute of the flask app
@@ -19,6 +22,10 @@ login.login_view = 'login'
 login.login_message = 'You can not do that'
 login.login_message_category = 'danger'
 
+
+#import the api blueprint and register it with flask app
+from app.blueprints.api import api
+app.register_blueprint(api)
 
 
 #import all of the routes from the routes file into current package

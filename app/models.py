@@ -29,6 +29,14 @@ class User(db.Model, UserMixin): #there are multiple parent classes that the use
     def check_password(self,password_guess):
         return check_password_hash(self.password, password_guess)
     
+    def to_dict(self):
+        return{
+            'id':self.id,
+            'first': self.first_name,
+            'last': self.last_name,
+            'username':self.username
+            }
+    
 
 @login.user_loader
 def get_a_user_by_id(user_id):
@@ -52,3 +60,11 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"post {self.id}{self.title}"
+    
+    def to_dict(self):
+        return{
+            'id':self.id,
+            'title': self.title,
+            'body': self.body,
+            'user_id':self.user_id
+            }
