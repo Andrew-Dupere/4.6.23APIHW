@@ -1,10 +1,13 @@
 from flask import request
 from . import api
 from app.models import Post, User
+from test import test123
 
-@api.route('/')
+@api.route('/', methods = ['GET','POST'])
 def index():
-    return 'API CALL IS HERE'
+
+    test123 = test123
+    return {'test': 'test'}
 
 #endpoint to get all posts
 @api.route('/posts', methods=["GET"])

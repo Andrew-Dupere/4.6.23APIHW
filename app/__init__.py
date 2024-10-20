@@ -3,13 +3,15 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
-
+from flask_cors import CORS
 
 
 
 app = Flask(__name__)
 app.config.from_object(Config)
 #app is an instance of the flask app, app.config calls an attribute of the flask app
+
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 db = SQLAlchemy(app)
 
